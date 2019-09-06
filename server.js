@@ -17,6 +17,6 @@ app.use(express.static("app/public"));
 
 db.sequelize.sync().then(() => {
     app.listen({ port: 4103 }, () =>
-    console.log(`Server ready at http://localhost:4303${server.graphqlPath}`)
+    console.log(`Server ready at http://localhost:4103${server.graphqlPath}`)
   );
 });
