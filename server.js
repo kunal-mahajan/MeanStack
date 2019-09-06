@@ -16,7 +16,8 @@ server.applyMiddleware({ app });
 app.use(express.static("app/public"));
 
 db.sequelize.sync().then(() => {
-    app.listen({ port: 4103 }, () =>
-    console.log(`Server ready at http://localhost:4103${server.graphqlPath}`)
+    var sysPort = 4024;
+    app.listen({ port: sysPort }, () =>
+    console.log(`Server ready at http://localhost:${sysPort}${server.graphqlPath}`)
   );
 });
