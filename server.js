@@ -13,8 +13,6 @@ const server = new ApolloServer({
 const app = express();
 server.applyMiddleware({ app });
 
-app.use(express.static("app/public"));
-
 db.sequelize.sync().then(() => {
     var sysPort = 4024;
     app.listen({ port: sysPort }, () =>
