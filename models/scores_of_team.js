@@ -9,9 +9,21 @@ export default (sequelize, DataTypes) => {
         dim_id: DataTypes.INTEGER,
         score: DataTypes.FLOAT
     }, {
-            timestamps: false,
-            freezeTableName: true,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true
+    });
+
+    TeamScore.associate = (models) => {
+        TeamScore.belongsTo(models.teams);
+    };
+
+    TeamScore.associate = (models) => {
+        TeamScore.hasOne(models.conf_dim, {
+            as: 'Dimensions',
+            foreignKey: 'dim_id'
         });
+    };
 
     return TeamScore;
 };

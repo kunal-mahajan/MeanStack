@@ -11,7 +11,12 @@ export default (sequelize, DataTypes) => {
     }, {
             timestamps: false,
             freezeTableName: true,
+            underscored: true,
         });
 
+        UserScore.associate = (models) => {
+            UserScore.belongsTo(models.scores_of_team);
+        };
+    
     return UserScore;
 };

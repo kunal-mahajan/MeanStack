@@ -8,9 +8,10 @@ export default (sequelize, DataTypes) => {
         first_name: DataTypes.STRING,
         last_name: DataTypes.STRING
     }, {
-            timestamps: false,
-            freezeTableName: true,
-        });
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+    });
 
     return User;
 };

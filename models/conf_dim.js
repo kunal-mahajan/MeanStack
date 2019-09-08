@@ -15,9 +15,15 @@ export default (sequelize, DataTypes) => {
             allowNull: false,
         },
     }, {
-            timestamps: false,
-            freezeTableName: true
-        });
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+    });
+
+
+    Dimension.associate = (models) => {
+        Dimension.belongsTo(models.scores_of_team);
+    };
 
     return Dimension;
 };

@@ -2,6 +2,7 @@ export default `
   type Team {
     id: ID!
     name: String!
+    team_scores: [TeamScore!]!
   }
 
   type Dimension {
